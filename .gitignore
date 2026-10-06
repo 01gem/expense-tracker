@@ -17,4 +17,4 @@ local.properties
 # AI Cache / IDE Artifacts
 .artifacts/
 .idea/
-project_source_code.txt
+sc.txt
