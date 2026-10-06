@@ -2,6 +2,7 @@ package com.gem.expensetracker
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedContent
@@ -38,6 +39,13 @@ class MainActivity : ComponentActivity() {
                 )
                 var selectedTab by remember { mutableStateOf(NavigationTab.HOME) }
                 var detailMonth by remember { mutableStateOf<String?>(null) }
+
+                BackHandler(enabled = detailMonth != null) {
+                    detailMonth = null
+                }
+                BackHandler(enabled = detailMonth == null && selectedTab != NavigationTab.HOME) {
+                    selectedTab = NavigationTab.HOME
+                }
 
                 val topBarTitle = when (selectedTab) {
                     NavigationTab.HOME -> if (detailMonth != null) "Month Details" else "Gem's Expense Tracker"
