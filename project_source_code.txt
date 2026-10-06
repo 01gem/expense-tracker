@@ -1,3 +1,5 @@
+UPDATE DATE: OCTOBER 7, 2026 01:00 AM PHT
+
 ================================================================================
 FILE: build.gradle.kts (root)
 ================================================================================
@@ -203,6 +205,13 @@ class MainActivity : ComponentActivity() {
                 )
                 var selectedTab by remember { mutableStateOf(NavigationTab.HOME) }
                 var detailMonth by remember { mutableStateOf<String?>(null) }
+
+                BackHandler(enabled = detailMonth != null) {
+                    detailMonth = null
+                }
+                BackHandler(enabled = detailMonth == null && selectedTab != NavigationTab.HOME) {
+                    selectedTab = NavigationTab.HOME
+                }
 
                 val topBarTitle = when (selectedTab) {
                     NavigationTab.HOME -> if (detailMonth != null) "Month Details" else "Gem's Expense Tracker"
