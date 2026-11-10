@@ -1,20 +1,66 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Files for the ART/Dalvik VM
+*.odex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+app/release/
+
+# Gradle files
+.gradle/
+build/
+/build/
+
+# Local configuration file (SDK path, etc.)
+local.properties
+
+# Android Studio
+/.idea/
 *.iml
-.gradle
-/local.properties
+*.iws
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# Signing files
+*.jks
+*.keystore
+*.pk8
+*.pem
+
+# OS generated files
 .DS_Store
-/build
-/captures
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Kotlin
+.kotlin/
+
+# External build tools
 .externalNativeBuild
 .cxx
-local.properties
 
-# AI Cache / IDE Artifacts
+# Captures (Android profiler)
+/captures
+
+# AI / IDE scratch artifacts
 .artifacts/
-.idea/
 sc.txt
